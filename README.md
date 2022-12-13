@@ -38,7 +38,7 @@ while문의 rs.next()를 이용함으로써 마지막 줄까지 계속 반복하
 ![image](https://user-images.githubusercontent.com/96267331/207217991-4b8b7968-ecc1-4dd1-b71e-663410494743.png)<br>
 회원명의 이름을 다른걸로 바꾸었을때 회원번호도 그의 맞는 번호로 바뀌게 된다.<br>
 ![image](https://user-images.githubusercontent.com/96267331/207218167-f72b890a-14e9-4cb1-a987-fb712a25eed0.png)<br>
-옵션의 있는 value값을 받아 그 값을 회원번호 value값에 넣어줌으로써 회원이름과 번호가 맞게 출력해준다.<br>
+옵션의 있는 value값을 받아 그 값을 회원번호 value값에 넣어줌으로써 회원이름과 번호가 맞게 출력해준다 그리고 강의신청과 수강료를 초기화시켜준다.<br>
 ![image](https://user-images.githubusercontent.com/96267331/207218521-f3fe3e46-428a-4c3a-86c1-4f2f892d41e6.png)<br>
 강의명은 강의를 신청할 반을 선택하는데 그의 맞는 수강료 값을 출력해준다 그중 회원 번호가 20000을 넘는 경우에는 메세지를 출력해주며 수강료를 50%할인 하여 출력을 해준다.<br>
 ![image](https://user-images.githubusercontent.com/96267331/207218792-6c937d39-900a-4abe-92ab-f05844a9c078.png)<br>

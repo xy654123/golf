@@ -44,5 +44,5 @@ while문의 rs.next()를 이용함으로써 마지막 줄까지 계속 반복하
 ![image](https://user-images.githubusercontent.com/96267331/207218792-6c937d39-900a-4abe-92ab-f05844a9c078.png)<br>
 ![image](https://user-images.githubusercontent.com/96267331/207218817-7275487d-219a-40ce-901d-c2024dcb0d36.png)<br>
 ![image](https://user-images.githubusercontent.com/96267331/207218866-288d0b6e-f391-47d0-a146-01752f70940c.png)<br>
-코드를 보면 스위치 문을 이용하여 입력받은 value값을 맞는 값을 출력해주며 회원번호의 0번째(첫번재) 번호가 2인경우 수강료를 2나누어 출력하게 해준다.
+코드를 보면 스위치 문을 이용하여 입력받은 value값의 맞는 값을 출력해주며 회원번호의 0번째(첫번재) 번호가 2인경우 수강료를 2나누어 출력하게 해준다.
 

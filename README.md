@@ -50,7 +50,7 @@ while문의 rs.next()를 이용함으로써 마지막 줄까지 계속 반복하
 
 ![image](https://user-images.githubusercontent.com/96267331/207788252-99e76b31-29fa-4372-bc8b-63aacd8cc1bc.png)<br>
 request.setCharacterEncoding를 UTF-8로하여 데이터값이 정상적인 언어로 바꾸어 넣어주도록 해주며 sql문의 insert문을 사용하여 DB테이블의값을 넣어 줄 수 있도록한다<br>
-먼저 DB와 연결을 시킨후 테이블 컬럼 순서의 맞추어 준다 그리고 수강신청 페이지의 있는 name값을 컬럼명과 맞게 입력하여 값을 ?를 통해 데이터를 넣어주며 테이블을 업데이트를 시켜 값을 넣어준다.<br>
+먼저 DB와 연결을 시킨후 테이블 컬럼 순서를 맞추어 준다 그리고 수강신청 페이지의 있는 name값을 컬럼명과 맞게 입력하여 데이터를 ?을 통해 넣어주며 업데이트를 시켜준다.<br>
 ![image](https://user-images.githubusercontent.com/96267331/207789817-4335f112-c02d-439b-8b6c-914ad2995dc1.png)<br>
 ![image](https://user-images.githubusercontent.com/96267331/207789884-b5e944c7-7bda-4c8a-aede-0bf6d4daf21f.png)
 

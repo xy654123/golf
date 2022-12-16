@@ -64,3 +64,18 @@ from tbl_class_202201 c, tbl_member_202201 m, TBL_TEACHER_202201 t
 where c.c_no = m.c_no and c.teacher_code = t.teacher_code
 ```
 이 sql문으로 테이블을 만드는데 이 sql문에서는 먼저 테이블별 명칭을 정해준다음 그 테이블의 기본키를 조인시켜주어야 한다. class테이블을 기본으로 하여 member테이블과 회원번호를 묶어주고 class테이블과 teacher테이블은 강사코드로 묶어준다. 그렇게 묶어준 테이블을 통하여 출력에 필요한값들을 조건에 맞게 데이터를 가져와 테이블로 출력시켜준다.
+
+# 강사매출현황 페이지
+
+```sql
+select t.teacher_code, t.class_name, t.teacher_name, to_char(sum(c.tuition), 'L999,999') tuition 
+from tbl_teacher_202201 t, tbl_class_202201 c 
+where t.teacher_code = c.teacher_code group by t.teacher_code, t.class_name, t.teacher_name, c.tuition order by t.teacher_code asc
+```
+<br>
+이 sql문은 teacher테이블과 class테이블을 사용하기 떄문에 두 테이블을 불러온 후 명칭을 만든다 그리고 강사코드를 이용하여 조인시켜준다.<br>
+그리고 테이블의 불러올 강사코드, 강의명, 강사명 하니씩 불러오고 마지막 총 매출은 sum을 이용해 매출을 더해준후 ￦와 ,를 넣어준다.<br>
+마지막으로 group by는 중복된 컬럼을 하나로 묶어주는것으로 총매출을 구하기위해서는 하나로 묶어줄 필요가 있기때문에 사용한다. 그리고 강사코드를 오름차순으로 정력하여 테이블의 출력하였다.<br>
+
+![image](https://user-images.githubusercontent.com/96267331/208009951-bf52c309-26e0-4dde-925c-4291b63c3672.png)<br>
+

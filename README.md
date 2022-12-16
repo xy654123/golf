@@ -70,7 +70,7 @@ where c.c_no = m.c_no and c.teacher_code = t.teacher_code
 ```sql
 select t.teacher_code, t.class_name, t.teacher_name, to_char(sum(c.tuition), 'L999,999') tuition 
 from tbl_teacher_202201 t, tbl_class_202201 c 
-where t.teacher_code = c.teacher_code group by t.teacher_code, t.class_name, t.teacher_name, c.tuition order by t.teacher_code asc
+where t.teacher_code = c.teacher_code group by t.teacher_code, t.class_name, t.teacher_name order by t.teacher_code asc
 ```
 <br>
 이 sql문은 teacher테이블과 class테이블을 사용하기 떄문에 두 테이블을 불러온 후 명칭을 만든다 그리고 강사코드를 이용하여 조인시켜준다.<br>

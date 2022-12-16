@@ -46,12 +46,21 @@ while문의 rs.next()를 이용함으로써 마지막 줄까지 계속 반복하
 ![image](https://user-images.githubusercontent.com/96267331/207218866-288d0b6e-f391-47d0-a146-01752f70940c.png)<br>
 코드를 보면 스위치 문을 이용하여 입력받은 value값의 맞는 값을 출력해주며 회원번호의 0번째(첫번재) 번호가 2인경우 수강료를 2나누어 출력하게 해준다.
 
-#수강신청 데이터를 넣는 페이지
+# 수강신청 데이터를 넣는 페이지
 
 ![image](https://user-images.githubusercontent.com/96267331/207788252-99e76b31-29fa-4372-bc8b-63aacd8cc1bc.png)<br>
 request.setCharacterEncoding를 UTF-8로하여 데이터값이 정상적인 언어로 바꾸어 넣어주도록 해주며 sql문의 insert문을 사용하여 DB테이블의값을 넣어 줄 수 있도록한다<br>
 먼저 DB와 연결을 시킨후 테이블 컬럼 순서를 맞추어 준다 그리고 수강신청 페이지의 있는 name값을 컬럼명과 맞게 입력하여 데이터를 ?을 통해 넣어주며 업데이트를 시켜준다.<br>
 ![image](https://user-images.githubusercontent.com/96267331/207789817-4335f112-c02d-439b-8b6c-914ad2995dc1.png)<br>
-![image](https://user-images.githubusercontent.com/96267331/207789884-b5e944c7-7bda-4c8a-aede-0bf6d4daf21f.png)
 
+# 회원정보조회 페이지
 
+![image](https://user-images.githubusercontent.com/96267331/207789884-b5e944c7-7bda-4c8a-aede-0bf6d4daf21f.png)<br>
+수강신청에서 입력한 데이터들이 테이블로 출력되는 페이지로 출력되는부분은 강사조회 페이지와 유사하지만 sql문의 많은 차이를 둔다.<br>
+```sql
+	 select substr(c.resist_month,1,4) || '년' || substr(c.resist_month,5,2) || '월' resist_month
+	 , c.c_no, m.c_name, t.class_name, c.class_area, to_char(c.tuition, 'L999,999') tuition, m.grade
+	 from tbl_class_202201 c, tbl_member_202201 m, TBL_TEACHER_202201 t
+	 where c.c_no = m.c_no and c.teacher_code = t.teacher_code
+```
+이 sql문으로 테이블을 만드는데 이 sql문에서는 먼저 테이블별 명칭을 정해준다음 그 테이블의 기본키를 조인시켜주어야 한다. class테이블을 기본으로 하여 member테이블과 회원번호를 묶어주고 class테이블과 teacher테이블은 강사코드로 묶어준다. 그렇게 묶어준 테이블을 통하여 출력에 필요한값들을 조건에 맞게 데이터를 가져와 테이블로 출력시켜준다.

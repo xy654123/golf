@@ -57,7 +57,7 @@ request.setCharacterEncoding를 UTF-8로하여 데이터값이 정상적인 언�
 
 ![image](https://user-images.githubusercontent.com/96267331/207789884-b5e944c7-7bda-4c8a-aede-0bf6d4daf21f.png)<br>
 수강신청에서 입력한 데이터들이 테이블로 출력되는 페이지로 출력되는부분은 강사조회 페이지와 유사하지만 sql문의 많은 차이를 둔다.<br>
-```javascript
+```sql
 select substr(c.resist_month,1,4) || '년' || substr(c.resist_month,5,2) || '월' resist_month
 , c.c_no, m.c_name, t.class_name, c.class_area, to_char(c.tuition, 'L999,999') tuition, m.grade
 from tbl_class_202201 c, tbl_member_202201 m, TBL_TEACHER_202201 t

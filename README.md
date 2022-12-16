@@ -57,10 +57,10 @@ request.setCharacterEncoding를 UTF-8로하여 데이터값이 정상적인 언�
 
 ![image](https://user-images.githubusercontent.com/96267331/207789884-b5e944c7-7bda-4c8a-aede-0bf6d4daf21f.png)<br>
 수강신청에서 입력한 데이터들이 테이블로 출력되는 페이지로 출력되는부분은 강사조회 페이지와 유사하지만 sql문의 많은 차이를 둔다.<br>
-```sql
-	 select substr(c.resist_month,1,4) || '년' || substr(c.resist_month,5,2) || '월' resist_month
-	 , c.c_no, m.c_name, t.class_name, c.class_area, to_char(c.tuition, 'L999,999') tuition, m.grade
-	 from tbl_class_202201 c, tbl_member_202201 m, TBL_TEACHER_202201 t
-	 where c.c_no = m.c_no and c.teacher_code = t.teacher_code
+```javascript
+select substr(c.resist_month,1,4) || '년' || substr(c.resist_month,5,2) || '월' resist_month
+, c.c_no, m.c_name, t.class_name, c.class_area, to_char(c.tuition, 'L999,999') tuition, m.grade
+from tbl_class_202201 c, tbl_member_202201 m, TBL_TEACHER_202201 t
+where c.c_no = m.c_no and c.teacher_code = t.teacher_code
 ```
 이 sql문으로 테이블을 만드는데 이 sql문에서는 먼저 테이블별 명칭을 정해준다음 그 테이블의 기본키를 조인시켜주어야 한다. class테이블을 기본으로 하여 member테이블과 회원번호를 묶어주고 class테이블과 teacher테이블은 강사코드로 묶어준다. 그렇게 묶어준 테이블을 통하여 출력에 필요한값들을 조건에 맞게 데이터를 가져와 테이블로 출력시켜준다.
